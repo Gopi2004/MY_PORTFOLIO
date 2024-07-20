@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medisetty Gopichand - Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Open+Sans&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            /* overflow-y: hidden; */   
+            background-color: white;
+            padding-bottom: 60px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #964B00;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .portfolio-title {
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 20px;
+            border: 2px solid white;
+            border-radius: 20px;
+            padding: 5px 10px;
+        }
+        .home-link, .nav-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            margin-right: 20px;
+        }
+        .home-icon, .nav-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            stroke: white;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .nav-separator {
+            color: white;
+            font-weight: bold;
+        }
+        .main-content {
+            display: flex;
+            justify-content: center;
+            padding: 70px 20px;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            margin-left: 50px;
+        }
+        .intro {
+            margin-left: 10%;
+        }
+        .intro h1, .intro h2 {
+            font-family: 'Comic Neue', cursive;
+            font-weight: 700;
+            font-size: 2.9em;
+        }
+        .intro p {
+            font-size: 1.5em;
+            overflow: hidden;
+            border-right: .15em solid #964B00;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 5.0s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #964B00; }
+        }
+        .photo {
+            width: 400px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .about-me {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid black;
+            font-family: 'Open Sans', sans-serif;
+            border-radius: 20px;
+        }
+        .resume-btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #964B00;
+            color: white;
+            text-decoration: none;
+            border-radius: 500px;
+            font-size: 1.2em;
+        }
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: #964B00;
+            flex-wrap: wrap;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .bottom-nav a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .bottom-nav svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            stroke: white;
+        }
+
+        @media (max-width: 1200px) {
+            .main-content {
+                padding: 50px 20px;
+            }
+            .content-wrapper {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 30px;
+            }
+            .intro {
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .photo {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+            .portfolio-title {
+                margin-bottom: 20px;
+            }
+            nav {
+                justify-content: center;
+                margin-top: 20px;
+            }
+            .nav-separator {
+                display: none;
+            }
+            .home-link, .nav-link {
+                margin: 10px;
+            }
+            .intro h1, .intro h2 {
+                font-size: 2.5em;
+            }
+            .intro p {
+                font-size: 1.3em;
+            }
+            .photo {
+                width: 300px;
+                height: 350px;
+            }
+            .bottom-nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .bottom-nav .nav-separator {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content {
+                padding: 30px 15px;
+            }
+            .photo {
+                width: 250px;
+                height: 300px;
+            }
+            .intro h1, .intro h2 {
+                font-size: 2em;
+            }
+            .intro p {
+                font-size: 1.1em;
+            }
+            .about-me {
+                padding: 15px;
+            }
+            .resume-btn {
+                width: 180px;
+                font-size: 1em;
+            }
+            .bottom-nav a {
+                font-size: 14px;
+            }
+            .bottom-nav svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="portfolio-title">MY PORTFOLIO</div>
+        <nav>
+            <a href="#" class="home-link">
+                <svg class="home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Home
+            </a>
+            <span class="nav-separator">|</span>
+            <a href="Education.html" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                Education
+            </a>
+            <span class="nav-separator">|</span>
+            <a href="Experience.html" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+                Experience
+            </a>
+            <span class="nav-separator">|</span>
+            <a href="Projects.html" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                    <polyline points="2 17 12 22 22 17"/>
+                    <polyline points="2 12 12 17 22 12"/>
+                </svg>
+                Projects
+            </a>
+            <span class="nav-separator">|</span>
+            <a href="achievements.html" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="7"/>
+                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                </svg>
+                Achievements
+            </a>
+            <span class="nav-separator">|</span>
+            <a href="Certificates.html" class="nav-link">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="9" y1="9" x2="15" y2="9"/>
+                    <line x1="9" y1="13" x2="15" y2="13"/>
+                    <line x1="9" y1="17" x2="15" y2="17"/>
+                </svg>
+                Certifications
+            </a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <img src="PROFF.jpg" alt="Medisetty Gopichand" class="photo">
+        <div class="content-wrapper">
+            <div class="intro">
+                <h1>Welcome to my creative space!</h1>
+                <h2>Hi, I'm Gopichand Medisetty</h2>
+                <p>Machine Learning Aspirant, Web Developer ....</p>
+            </div>
+            <section class="about-me">
+                <h2>A Bit About Me</h2>
+                <p>Eager and adaptive learner with a keen interest in acquiring new knowledge. Demonstrates strong grasping abilities, effective communication, and problem-solving skills. Passionate about fostering creativity and driving innovation.</p>
+            </section>
+            <a href="https://drive.google.com/file/d/1AqRsxFRSKA7d_gWgrAo0sk8T0ai3glch/view?usp=sharing" class="resume-btn" >Check out my resume</a>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="tel:+91-8919946829">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            (+91) - 8919946829
+        </a>
+        <span class="nav-separator">|</span>
+        <a href="mailto:gopichand_m@srmap.edu.in">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            gopichand_m@srmap.edu.in
+        </a>
+        <span class="nav-separator">|</span>
+        <a href="https://www.instagram.com/_she_calls_me_gopi__/?hl=en">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            Instagram
+        </a>
+        <span class="nav-separator">|</span>
+        <a href="https://www.linkedin.com/in/gopichand-medisetty-8512b8239/">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+            LinkedIn
+        </a>
+        <span class="nav-separator">|</span>
+        <a href="https://github.com/Gopi2004">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+            GitHub
+        </a>
+    </nav>
+</body>
+</html>
